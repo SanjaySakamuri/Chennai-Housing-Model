@@ -1,107 +1,120 @@
-# 🏠 Chennai Housing Price Prediction using XGBoost 🚀
+# 🏠 Chennai Housing Price Prediction using XGBoost
 
-This project predicts housing prices in Chennai using the XGBoost machine learning algorithm, built entirely in a Jupyter/Google Colab environment. It preprocesses real-world housing data and provides accurate price predictions based on various features such as area, size, amenities, and building quality.
+> _A machine learning pipeline to predict housing prices in Chennai using gradient boosting techniques._
 
----
-
-## ✨ Features
-
-- ⚡ Built using [XGBoost](https://xgboost.readthedocs.io/en/stable/), a powerful gradient boosting framework  
-- 📊 Handles missing values, categorical encoding, and feature scaling  
-- 🧠 Predicts housing prices using model trained on Chennai property dataset  
-- 📈 Includes model evaluation (MSE, R²) and feature importance visualization  
-- 🏡 Predicts the price of a *new custom home input*  
+[![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)](https://www.python.org/)  
+[![XGBoost](https://img.shields.io/badge/Model-XGBoost-success?logo=fastapi)](https://xgboost.readthedocs.io/en/stable/)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
-## 📁 Project Structure
+## 📌 Overview
+
+This project builds an end-to-end regression model to **predict real estate prices in Chennai** based on various property features such as area, locality, number of rooms, and amenities. It uses the **XGBoost** algorithm to achieve high predictive accuracy and interpretability, visualizing key drivers of price fluctuations.
+
+> ✅ Created as part of a personal machine learning portfolio to demonstrate regression workflows and model deployment readiness.
+
+---
+
+## 🚀 Highlights
+
+- ✅ Preprocessing pipeline with null handling, encoding, and scaling  
+- 🧠 Model training using **XGBoost Regressor**  
+- 📈 Evaluation metrics (MSE, R²) and **feature importance visualization**  
+- 🔮 Supports custom input prediction for unseen properties  
+- 🧪 Built entirely in a **Colab / Jupyter Notebook** environment
+
+---
+
+## 📂 File Structure
 
 ```
 chennai-housing-xgboost/
 │
-├── main.ipynb         # Jupyter notebook containing all code (Colab compatible)
-├── Chennai housing sale.csv  # Dataset used for training
-├── requirements.txt   # List of required Python packages
-├── README.md          # Project documentation (this file)
-└── feature_graph.png      # Importance of each feature for the model's prediction
-
+├── main.ipynb                # All data processing, modeling, and visual output
+├── Chennai housing sale.csv  # Original dataset from Kaggle
+├── requirements.txt          # Required libraries
+├── feature_graph.png         # Bar plot showing most influential features
+└── README.md                 # Project documentation
 ```
 
 ---
 
-## 🛠️ Getting Started
+## 📊 Dataset Info
 
-> This project is designed to run easily in **Google Colab** or a local Jupyter environment.
+- 📄 **Source**: [Kaggle - Chennai Housing Prices](https://www.kaggle.com/datasets/kunwarakash/chennai-housing-sales-price)  
+- 🏷️ **Columns**: Area type, location, square footage, BHK, amenities, sale price, etc.  
+- 📅 **Note**: Dataset was last updated in 2022 and may not reflect current prices
 
-### 🔧 Installation (optional if using Colab)
+---
 
+## 🛠️ Setup Instructions
+
+### 👉 Run on Google Colab (Recommended)
+- Open `main.ipynb` in [Google Colab](https://colab.research.google.com/)
+- Upload the `Chennai housing sale.csv` file when prompted
+- Run all cells
+
+### 💻 Run Locally
 1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/chennai-housing-xgboost.git
-cd chennai-housing-xgboost
-```
-
+    ```bash
+    git clone https://github.com/Sanjaykumar030/Chennai-Housing-Model.git
+    cd Chennai-Housing-Model
+    ```
 2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## ▶️ Usage
-
-### Run in Google Colab:
-1. Open the notebook `main.ipynb` in [Google Colab](https://colab.research.google.com/).
-2. Upload the dataset when prompted (`Chennai housing sale.csv`).
-3. Run all cells.
-
-### Local Jupyter Use:
-1. Make sure you have Jupyter installed.
-2. Place `main.ipynb` and the CSV dataset in the same folder.
+    ```bash
+    pip install -r requirements.txt
+    ```
 3. Launch Jupyter:
-```bash
-jupyter notebook
+    ```bash
+    jupyter notebook
+    ```
+4. Open `main.ipynb` and run all cells
+
+---
+
+## 🔁 Workflow Overview
+
+| Step                | Description                                               |
+|---------------------|----------------------------------------------------------|
+| 🔍 Data Exploration | Load and inspect features & distributions                 |
+| 🧹 Cleaning         | Handle missing values, drop noisy or unused columns       |
+| 🔄 Encoding         | Convert categorical variables to numerical format         |
+| 📏 Scaling          | Apply standard scaling to continuous variables           |
+| 🧠 Model Training   | Train an XGBoost Regressor on cleaned data               |
+| 📈 Evaluation       | Report MSE, R², and plot predicted vs actual prices      |
+| 🔮 Prediction Util. | Manually input a new house’s specs to estimate price     |
+| 📊 Feature Import.  | Visualize top factors influencing model decisions        |
+
+---
+
+## 📌 Sample Output
+
 ```
-4. Open `main.ipynb` and run all cells.
-- 📂 Dataset Source: [Chennai Housing Prices](https://www.kaggle.com/datasets/kunwarakash/chennai-housing-sales-price) by Akash Kunwar on Kaggle
+Mean Squared Error: 4,825,614.23
+R² Score: 0.9945
 
----
-
-## 📊 Model Workflow
-
-- 📥 Data Loading (`Chennai housing sale.csv`)
-- 🧹 Cleaning (handling dates, nulls, dropping unused columns)
-- 🔄 Encoding (one-hot encoding for categorical features)
-- 📏 Feature Scaling (StandardScaler)
-- 🧠 Model Training (XGBoost Regressor)
-- ✅ Evaluation (MSE & R²)
-- 🔮 Real-world prediction using manually entered property details
-
----
-
-## 🖼️ Output Example
-
-```
-Mean Squared Error: 48,25,614.23
-R-squared: 0.9945
-
-Predicted House Price: ₹62,15,000.00
+Predicted Price for Custom Input: ₹62,15,000.00
 ```
 
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests for improvements or bug fixes.
-
-🔔 **Note:** Before contributing, please read the Caution section regarding dataset limitations and prediction accuracy.
-
+<img src="feature_graph.png" width="600"/>
 
 ---
 
-## 📄 License
+## ⚠️ Limitations
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+- 📆 The model is trained on data up to 2022; predictions may not reflect 2025 market conditions
+- 🌍 Does not include economic trends, interest rates, or external market factors
+- 🏷️ Location encoding may flatten locality-wise price variation
+
+---
+
+## 💡 Future Improvements
+
+- Integrate live real estate APIs for dynamic pricing
+- Deploy as a web app using Flask or Streamlit
+- Explore ensemble models for robustness
+- Add geospatial data and map-based pricing insights
 
 ---
 
@@ -109,8 +122,14 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 Feel free to reach out to me:
 
-- Email: [sksanjaykumar010307@gmail.com](mailto:sksanjaykumar010307@gmail)
-- LinkedIn: [linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214](https://linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214)
-- ORCID: [https://orcid.org/0009-0009-1021-2297](https://orcid.org/0009-0009-1021-2297)
-## ⚠️ Caution 
-- The model is built and trained on a Kaggle dataset last updated in 2022. Therefore, its predictions are based on data available up to that year and may not reflect current market trends.
+- 📧 Email: sksanjaykumar010307@gmail.com
+- 🔗 LinkedIn: [linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214](https://linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214)
+- 🧪 ORCID: [https://orcid.org/0009-0009-1021-2297](https://orcid.org/0009-0009-1021-2297)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.  
+See the [LICENSE](LICENSE) file for full details.
+
